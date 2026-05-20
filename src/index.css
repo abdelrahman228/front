@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Cairo", system-ui, sans-serif;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0f0a1e;
+  color: #f3e8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 lg:px-8;
+  }
+
+  .panel {
+    @apply rounded-lg border border-border bg-surface/90 p-5 shadow-2xl shadow-black/20;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-border bg-background/80 px-4 py-3 text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-5 py-2.5 font-semibold text-white transition hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-lg border border-border bg-transparent px-5 py-2.5 font-semibold text-text transition hover:border-primary hover:bg-primary/10;
+  }
+
+  .label {
+    @apply mb-2 block text-sm font-semibold text-muted;
+  }
+}
