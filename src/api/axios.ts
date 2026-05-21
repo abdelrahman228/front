@@ -63,7 +63,7 @@ api.interceptors.response.use(
     }
 
     if (error.code === "ERR_NETWORK" || error.message === "Network Error") {
-      toast.error("تعذر الاتصال بالسيرفر. تأكد أن الباك إند يعمل على https://skewed-trespass-strained.ngrok-free.dev");
+      toast.error(`تعذر الاتصال بالسيرفر. تأكد أن الباك إند يعمل على ${API_URL}`);
       return Promise.reject(error);
     }
 
