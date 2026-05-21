@@ -2,7 +2,7 @@ import axios, { AxiosError, type AxiosResponse, type InternalAxiosRequestConfig 
 import { toast } from "react-toastify";
 import { logoutUser } from "../store/auth";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "https://skewed-trespass-strained.ngrok-free.dev";
 const DEV_FORWARDED_FOR = import.meta.env.VITE_DEV_FORWARDED_FOR;
 
 const api = axios.create({
@@ -63,7 +63,7 @@ api.interceptors.response.use(
     }
 
     if (error.code === "ERR_NETWORK" || error.message === "Network Error") {
-      toast.error("تعذر الاتصال بالسيرفر. تأكد أن الباك إند يعمل على http://localhost:3000");
+      toast.error("تعذر الاتصال بالسيرفر. تأكد أن الباك إند يعمل على https://skewed-trespass-strained.ngrok-free.dev");
       return Promise.reject(error);
     }
 
